@@ -1,5 +1,13 @@
 .App {
+  background-color: white;
+}
+
+.Title {
   text-align: center;
+}
+
+.Contact {
+  text-align: left;
 }
 
 .App-logo {
