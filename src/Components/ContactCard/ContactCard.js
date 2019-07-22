@@ -1,33 +1,16 @@
 import React, { Component } from "react";
-import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import PropTypes from "prop-types"
 import "./ContactCard.css";
-
-const useStyles = makeStyles({
-    card: {
-      minWidth: 275,
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
-    title: {
-      fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
-    },
-  });
 
 class ContactCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            number: "",
-            email: ""
+            name: props.name,
+            number: props.number,
+            email: props.email
 
         };
     }
@@ -64,6 +47,9 @@ class ContactCard extends Component {
         return (
             
             <div className = "ContactCard">
+                Name: {this.state.name}
+                Number: {this.state.number}
+                Email: {this.state.number}
             <div>
             
             <TextField
@@ -120,6 +106,12 @@ class ContactCard extends Component {
         
         )
     }
+}
+
+ContactCard.prototype = {
+    name: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired,
+    email: PropTypes.string.isRequired
 }
 
 export default ContactCard;
