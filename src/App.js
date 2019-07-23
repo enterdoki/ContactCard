@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Typography from "@material-ui/core/Typography";
 import ContactCard from "./Components/ContactCard/ContactCard";
 import Decrement from "./Components/Decrement/Decrement";
+import Form from "./Components/Form/Form";
+import Folder from "./Components/Folder/Folder";
 import './App.css';
 
 class App extends Component {
@@ -18,14 +20,11 @@ class App extends Component {
         <div className = "App">
           <div className = "Title">
             <Typography variant="h3" color="primary">
-              Contact Card
+              Folder
             </Typography>
           </div>
-          <div className = "Contact">
-            <ContactCard/>
-            <ContactCard/>
-            <ContactCard/>
-            <Decrement number = "10"></Decrement>
+          <div className = "Edit">
+            <Folder/>
           </div>
           
         </div>
