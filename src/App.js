@@ -21,10 +21,10 @@ class App extends Component {
               Contact Card
             </Typography>
           </div>
-          <div classname = "Contact">
-            <ContactCard name = "Tom Chen" number = "646-112-1234" email = "ymmot925@gmail.com"></ContactCard>
-            <ContactCard name = "Billey" number = "646-131-4563" email = "johnsmith@gmail.com"></ContactCard>
-            <ContactCard name = "Sam" number = "646-999-1235" email = "johndoe@gmail.com"></ContactCard>
+          <div className = "Contact">
+            <ContactCard/>
+            <ContactCard/>
+            <ContactCard/>
             <Decrement number = "10"></Decrement>
           </div>
           

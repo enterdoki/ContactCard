@@ -1,5 +1,6 @@
 .App {
   background-color: white;
+  
 }
 
 .Title {
@@ -7,9 +8,10 @@
 }
 
 .Contact {
-  text-align: left;
+  display:flex;
+  flex-wrap: wrap;
+  
 }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;

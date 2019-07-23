@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import "./ContactCard.css";
+import Button from "@material-ui/core/Button";
+import "./Decrement.css";
 
 class Decrement extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            number: ""
+            number: props.number
 
         };
         this.subtract = this.subtract.bind(this);
@@ -14,7 +14,7 @@ class Decrement extends Component {
 
     subtract() {
         if(this.state.number === 0) {
-            alert("No negative numbers allowed");
+            alert("Cannot be less than zero");
         }
         else {
             this.setState({
@@ -26,15 +26,17 @@ class Decrement extends Component {
         return (
             <div className = "Decrement">
                 <h1>{this.state.number}</h1>
-                <button onClick={this.subtract}>Decrement</button>
+                <Button
+                variant="outlined"
+                size="large"
+                color="primary"
+                onClick={this.subtract}
+                >
+                Decrement
+                </Button>
             </div>
         )
     }
-}
-
-Decrement.propType = {
-    number: checkPropTypes.number.isRequired
-
 }
 
 

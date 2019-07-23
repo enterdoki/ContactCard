@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import PropTypes from "prop-types"
 import "./ContactCard.css";
 
 class ContactCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: props.name,
-            number: props.number,
-            email: props.email
+            name: "",
+            number: "",
+            email: ""
 
         };
     }
@@ -19,7 +18,7 @@ class ContactCard extends Component {
         console.log(event.target.value)
         this.setState({ name: event.target.value });
     };
-    oNumberChange = event => {
+    onNumberChange = event => {
         console.log(event.target.value)
         this.setState({ number: event.target.value });
     };
@@ -44,14 +43,9 @@ class ContactCard extends Component {
 
     
     render () {
-        return (
-            
+        return (        
             <div className = "ContactCard">
-                Name: {this.state.name}
-                Number: {this.state.number}
-                Email: {this.state.number}
             <div>
-            
             <TextField
                 label="Enter Name"
                 placeholder="Name"
@@ -61,8 +55,8 @@ class ContactCard extends Component {
                 value={this.state.name}
                 onChange={this.onNameChange}
             />
-        </div>
-        <div>
+            </div>
+            <div>
             <TextField
                 label="Enter Number"
                 placeholder="(505)500-5000"
@@ -70,7 +64,7 @@ class ContactCard extends Component {
                 margin="normal"
                 variant="outlined"
                 value={this.state.number}
-                onChange={this.oNumberChange}
+                onChange={this.onNumberChange}
             />
         </div>
         <div>
@@ -89,7 +83,7 @@ class ContactCard extends Component {
                 variant="outlined"
                 size="large"
                 color="primary"
-                onClick={this.handleSubmit}
+                // onClick={this.handleSubmit}
             >
                 Submit
             </Button>
@@ -97,21 +91,15 @@ class ContactCard extends Component {
         </div>
         
         <div className = "Card">
-            <h1>Your username is: {this.state.name}</h1>
-            <h1> Your number is: {this.state.number}</h1>
-            <h1> Your email is: {this.state.email}</h1>
+            <h2>Name {this.state.name}</h2>
+            <h2>Number: {this.state.number}</h2>
+            <h2>Email: {this.state.email}</h2>
         </div>
         
     </div>
         
         )
     }
-}
-
-ContactCard.prototype = {
-    name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,
-    email: PropTypes.string.isRequired
 }
 
 export default ContactCard;
